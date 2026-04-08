@@ -2,32 +2,14 @@
 <html>
 <head>
 <title>Opening file...</title>
-<style>
-  body { font-family: -apple-system, sans-serif; padding: 40px; text-align: center; background: #1a1a2e; color: #e0e0e0; }
-  a { color: #4A90D9; font-size: 18px; }
-  .info { color: #888; margin-top: 20px; font-family: monospace; }
-  h2 { color: #fff; }
-</style>
 <script>
   const params = new URLSearchParams(window.location.search);
   const p = params.get('p');
   if (p) {
     window.location.href = 'audit3a:' + decodeURIComponent(p);
+    setTimeout(function() { window.close(); }, 500);
   }
 </script>
 </head>
-<body>
-<h2>Opening in VS Code...</h2>
-<script>
-  const params2 = new URLSearchParams(window.location.search);
-  const p2 = params2.get('p');
-  if (p2) {
-    const decoded = decodeURIComponent(p2);
-    document.write('<p>If the file did not open automatically, <a href="audit3a:' + decoded + '">click here</a></p>');
-    document.write('<p class="info">' + decoded + '</p>');
-  } else {
-    document.write('<p>Usage: ?p=PROJECT/risks/RISK-ID.md</p>');
-  }
-</script>
-</body>
+<body></body>
 </html>
